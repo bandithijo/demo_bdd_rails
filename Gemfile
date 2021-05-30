@@ -45,6 +45,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'database_cleaner-active_record', '~> 2.0', '>= 2.0.1'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  gem 'email_spec', '~> 2.2'
 end
 
 group :development do
