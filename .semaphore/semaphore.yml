@@ -5,7 +5,7 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Setup
+  - name: Test
     task:
       env_vars:
         - name: DATABASE_URL
@@ -23,15 +23,9 @@ blocks:
             - cache store
             - 'bundle exec rake db:setup'
             - 'bundle exec rake db:test:prepare'
-  - name: RSpec Tests
-    task:
-      jobs:
         - name: RSpec Tests
           commands:
             - bundle exec rspec
-  - name: Cucumber Tests
-    task:
-      jobs:
         - name: Cucumber Tests
           commands:
             - bundle exec cucumber
