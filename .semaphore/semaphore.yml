@@ -26,8 +26,14 @@ blocks:
         - name: RSpec Tests
           commands:
             - checkout
+            - sem-service start postgres 11
+            - sem-version ruby 2.7.2
+            - cache restore
             - bundle exec rspec
         - name: Cucumber Tests
           commands:
             - checkout
+            - sem-service start postgres 11
+            - sem-version ruby 2.7.2
+            - cache restore
             - bundle exec cucumber
