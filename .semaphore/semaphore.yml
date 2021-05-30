@@ -15,16 +15,14 @@ blocks:
       jobs:
         - name: Setup
           commands:
+            - checkout
+            - sem-service start postgres 11
+            - sem-version ruby 2.6.0
+            - cache restore
+            - bundle install --path vendor/bundle
+            - cache store
             - 'bundle exec rake db:setup'
             - 'bundle exec rake db:test:prepare'
-      prologue:
-        commands:
-          - checkout
-          - sem-service start postgres 11
-          - sem-version ruby 2.6.0
-          - cache restore
-          - bundle install --path vendor/bundle
-          - cache store
     dependencies: []
   - name: RSpec Tests
     task:
@@ -34,7 +32,13 @@ blocks:
             - bundle exec rspec
       prologue:
         commands:
+          - checkout
           - cache restore
+          - sem-service start postgres 11
+          - sem-version ruby 2.6.0
+          - bundle install --path vendor/bundle
+          - 'bundle exec rake db:setup'
+          - 'bundle exec rake db:test:prepare'
     dependencies:
       - Setup
   - name: Cucumber Tests
@@ -47,4 +51,10 @@ blocks:
             - bundle exec cucumber
       prologue:
         commands:
+          - checkout
           - cache restore
+          - sem-service start postgres 11
+          - sem-version ruby 2.6.0
+          - bundle install --path vendor/bundle
+          - 'bundle exec rake db:setup'
+          - 'bundle exec rake db:test:prepare'
