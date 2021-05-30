@@ -26,14 +26,9 @@ blocks:
     dependencies: []
   - name: RSpec Tests
     task:
-      prologue:
-        commands:
-          - checkout
-          - cache restore
       jobs:
         - name: RSpec Tests
           commands:
-            - cache restore
             - bundle exec rspec
     dependencies:
       - Setup
@@ -44,5 +39,4 @@ blocks:
       jobs:
         - name: Cucumber Tests
           commands:
-            - cache restore
             - bundle exec cucumber
