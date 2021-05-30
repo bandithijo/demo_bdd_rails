@@ -25,7 +25,9 @@ blocks:
             - 'bundle exec rake db:test:prepare'
         - name: RSpec Tests
           commands:
+            - checkout
             - bundle exec rspec
         - name: Cucumber Tests
           commands:
+            - checkout
             - bundle exec cucumber
