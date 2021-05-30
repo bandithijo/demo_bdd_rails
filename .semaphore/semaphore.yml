@@ -29,6 +29,8 @@ blocks:
       jobs:
         - name: RSpec Tests
           commands:
+            - checkout
+            - cache restore
             - bundle exec rspec
     dependencies:
       - Setup
@@ -39,4 +41,6 @@ blocks:
       jobs:
         - name: Cucumber Tests
           commands:
+            - checkout
+            - cache restore
             - bundle exec cucumber
