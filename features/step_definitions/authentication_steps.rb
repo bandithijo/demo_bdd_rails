@@ -1,5 +1,5 @@
 Given "I visit the homepage" do
-  visi root_path
+  visit root_path
 end
 
 When "I fill in the sign up form" do
