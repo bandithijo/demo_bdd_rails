@@ -46,6 +46,7 @@ group :development, :test do
   gem 'database_cleaner-active_record', '~> 2.0', '>= 2.0.1'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'email_spec', '~> 2.2'
+  gem 'devise', '~> 4.8'
 end
 
 group :development do
