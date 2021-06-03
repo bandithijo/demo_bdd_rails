@@ -5,7 +5,7 @@ end
 When "I fill in the sign up form" do
   click_link "Sign up"
 
-  fill_in "user_email", with: "teste@testdomain.test"
+  fill_in "user_email", with: "tester@testdomain.test"
   fill_in "user_password", with: "pa$$word"
   fill_in "user_password_confirmation", with: "pa$$word"
 
@@ -44,7 +44,7 @@ end
 And "I am logged in" do
   visit root_path
 
-  fill_in "user_email", with: "testes@testdomai.test"
+  fill_in "user_email", with: "tester@testdomain.test"
   fill_in "user_password", with: "pa$$word"
 
   click_button "Log in"
