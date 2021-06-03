@@ -38,10 +38,10 @@ When "I fill in the login form" do
 end
 
 Then "I should be logged in" do
-  expect(page).to have_content("Logged in")
+  expect(page).to have_content("Signed in")
 end
 
-And "I am logged in" do
+Given "I am logged in" do
   visit root_path
 
   fill_in "user_email", with: "tester@testdomain.test"
@@ -51,7 +51,7 @@ And "I am logged in" do
 end
 
 When "I click on the log out button" do
-  click_button "Log out"
+  click_link "Log out"
 end
 
 Then "I should be redirected to the log in page" do
