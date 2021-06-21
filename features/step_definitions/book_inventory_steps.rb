@@ -15,6 +15,8 @@ When "I visited the homepage" do
 end
 
 Then "I should see the list of my books" do
+  # log page.body
+
   expect(page).to have_content("Don Quixote")
   expect(page).to have_content("Moby Dick")
 end
